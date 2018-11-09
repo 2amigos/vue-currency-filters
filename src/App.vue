@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <FiltersExample/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FiltersExample from '@/components/FiltersExample';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FiltersExample,
+  },
+  created() {
+    // Initialize default app currency
+    localStorage.setItem('User/selectedCurrency', this.$constants.EUR_SYMBOL);
   }
-}
+};
 </script>
 
 <style>
